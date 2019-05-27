@@ -10,6 +10,7 @@ numpy = "*"
 pandas = "*"
 matplotlib = "*"
 jupyter = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
