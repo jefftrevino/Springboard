@@ -12,6 +12,9 @@ matplotlib = "*"
 jupyter = "*"
 requests = "*"
 seaborn = "*"
+pydot = "*"
+pymc3 = "*"
+arviz = "*"
 
 [requires]
 python_version = "3.7"
