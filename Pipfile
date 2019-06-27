@@ -15,6 +15,7 @@ seaborn = "*"
 pydot = "*"
 arviz = "*"
 pymc3 = "*"
+statsmodels = "*"
 
 [requires]
 python_version = "3.7"
