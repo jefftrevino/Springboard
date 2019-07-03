@@ -1,7 +1,7 @@
 /* Q1: Some of the facilities charge a fee to members, but some do not.
 Please list the names of the facilities that do. */
 SELECT name
-FROM `Facilities`
+FROM Facilities
 WHERE membercost > 0.0
 
 
@@ -13,15 +13,15 @@ WHERE membercost > 0.0
 where the fee is less than 20% of the facility's monthly maintenance cost?
 Return the facid, facility name, member cost, and monthly maintenance of the
 facilities in question. */
-SELECT `facid`, `name`, `membercost`, `monthlymaintenance`
-FROM `Facilities`
+SELECT facid, name, membercost, monthlymaintenance
+FROM Facilities
 WHERE membercost < .2 * monthlymaintenance
 
 
 /* Q4: How can you retrieve the details of facilities with ID 1 and 5?
 Write the query without using the OR operator. */
 SELECT *
-FROM `Facilities`
+FROM Facilities
 WHERE facid IN (1, 5)
 
 
@@ -29,18 +29,18 @@ WHERE facid IN (1, 5)
 'cheap' or 'expensive', depending on if their monthly maintenance cost is
 more than $100? Return the name and monthly maintenance of the facilities
 in question. */
-SELECT  `name` ,  `monthlymaintenance` ,
-CASE WHEN  `monthlymaintenance` >100
+SELECT  name ,  monthlymaintenance,
+CASE WHEN  monthlymaintenance >100
 THEN  'expensive'
 ELSE  'cheap'
 END AS costliness
-FROM  `Facilities`
+FROM  Facilities
 
 
 /* Q6: You'd like to get the first and last name of the last member(s)
 who signed up. Do not use the LIMIT clause for your solution. */
 SELECT firstname, surname, MAX(joindate)
-FROM `Members`
+FROM Members
 WHERE firstname != 'GUEST'
 
 
@@ -93,7 +93,7 @@ CASE WHEN sub.memid = 0 THEN sub.slots * Facilities.guestcost
 The output of facility name and total revenue, sorted by revenue. Remember
 that there's a different cost for guests and members! */
 SELECT Facilities.name,
-       CASE WHEN Bookings.memid = 0 THEN SUM(Facilities.guestcost*Bookings.slots)
+       CASE WHEN Bookings.memid = 0 THEN SUM(Facilities.guestcost * Bookings.slots)
        ELSE SUM(Facilities.membercost * Bookings.slots) END AS revenue_sum
 FROM Bookings
 JOIN Facilities
