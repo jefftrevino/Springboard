@@ -17,6 +17,7 @@ arviz = "*"
 pymc3 = "*"
 statsmodels = "*"
 fbprophet = "*"
+plotly = "*"
 
 [requires]
 python_version = "3.7"
