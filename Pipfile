@@ -16,6 +16,7 @@ pydot = "*"
 arviz = "*"
 pymc3 = "*"
 statsmodels = "*"
+fbprophet = "*"
 
 [requires]
 python_version = "3.7"
