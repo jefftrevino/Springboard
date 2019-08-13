@@ -116,12 +116,10 @@ def event_from_row(row, cid):
 
 mask = (predictions.index.year >= 2019) & (predictions.index.month >= 9)
 predictions = predictions[mask]
-
-# get ahold of the end of 2019
-rest_of_nineteen = predictions.loc['2019-09-01':'2019-12-31']
-
-# post predictions for rest of 2019 to calendar
-for index, row in rest_of_nineteen.iterrows():
+# get ahold of the first date
+sept_first = predictions.loc['2019-09-01':'2019-09-01']
+# build a prediction string for the data and post it to the calendar
+for index, row in sept_first.iterrows():
     date_string = str(index.date())
     event_summary_string = build_daily_string(row)
     mr_body = make_event_body(date_string, event_summary_string)
