@@ -23,6 +23,7 @@ google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
 sklearn = "*"
 xlrd = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.7"
