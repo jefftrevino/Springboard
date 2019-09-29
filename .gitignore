@@ -1,5 +1,4 @@
 .ipynb_checkpoints/
 *.json
-*.DS_Store
 *.pickle
 figures/
