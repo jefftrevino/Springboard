@@ -25,6 +25,7 @@ sklearn = "*"
 xlrd = "*"
 tensorflow = "*"
 ipdb = "*"
+pyspark = "*"
 
 [requires]
 python_version = "3.7"
